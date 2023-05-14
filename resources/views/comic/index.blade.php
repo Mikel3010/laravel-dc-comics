@@ -25,7 +25,14 @@
         <td>{{$comic->series}}</td>
         <td>{{$comic->sale_date}}</td>
         <td>{{$comic->type}}</td>
-        <td><a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary btn-sm">Descrizione</a></td>
+        <td><a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary btn-sm">Descrizione</a>
+        <form action="{{ route('comics.destroy', $comic->id)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <input type="submit" value="Cancella">
+        
+        </form>
+        </td>
       </tr>
       @endforeach
     </tbody>
