@@ -5,7 +5,7 @@
 @endsection
 
 @section('page.main')
-
+<a href="{{route('comics.create')}}" class="btn btn-success">Crea Nuovo Comic</a>
 <table class="table">
     <thead>
       <tr>
