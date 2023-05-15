@@ -87,7 +87,7 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id, Comic $comics)
+    public function update(Request $request, Comic $comics)
     {
         $data = $request->all();
 
@@ -111,9 +111,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comic $comics)
+    public function destroy(Comic $comic)
     {
-        $comics->delete();
+        $comic->delete();
         return to_route('comics.index');
     }
 }
